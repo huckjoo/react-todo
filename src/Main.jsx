@@ -1,10 +1,15 @@
 import React from 'react';
 import styles from './Main.module.css';
 
-export default function Main() {
+export default function Main({ todos }) {
+
   return (
     <div className={styles.main}>
-      <h1>main</h1>
+      <ul>
+        {todos.map((todo, i) => {
+          return <li key={i}>{todo}</li>
+        })}
+      </ul>
     </div>
   );
 }
