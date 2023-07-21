@@ -11,10 +11,16 @@ function App() {
     setTodos([...Todos, value])
   }
 
+  const handleDelete = (index) => {
+    const removedArr = Todos;
+    removedArr.splice(index, 1);
+    setTodos([...removedArr])
+  }
+
   return (
     <div className="container">
       <Header />
-      <Main todos={Todos} />
+      <Main todos={Todos} handleDelete={handleDelete} />
       <Footer handleClick={handleClick} />
     </div>
   );
