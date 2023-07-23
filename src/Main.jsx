@@ -5,11 +5,15 @@ export default function Main({ todos, handleDelete }) {
 
   return (
     <div className={styles.main}>
-      <ul>
-        {todos.map((todo, i) => {
-          return <li key={i}><span>{todo}</span> <button className={styles.button} onClick={() => { handleDelete(i) }}>X</button></li>
-        })}
-      </ul>
+      {todos.map((todo, i) => {
+        return (
+          <div>
+            <input type="checkbox" />
+            <span>{todo}</span>
+            <button className={styles.button} onClick={() => { handleDelete(i) }}>X</button>
+          </div>
+        )
+      })}
     </div>
   );
 }
