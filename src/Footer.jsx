@@ -9,14 +9,14 @@ export default function Footer({ handleClick }) {
   }
 
   const handleButtonClick = () => {
-    handleClick(value)
+    handleClick({ value, "checked": false })
     setValue("")
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!value) return
-    handleClick(value)
+    handleClick({ value, "checked": false })
     setValue("")
   }
 
