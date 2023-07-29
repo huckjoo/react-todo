@@ -28,7 +28,7 @@ export default function Main({ todos, handleDelete, types, handleUpdate }) {
       {types === 'all' && todos.map((todo, i) => {
         return (
           <div key={i}>
-            <input type="checkbox" onClick={(e) => { handleUpdate(i, e.target.checked) }} />
+            <input type="checkbox" onChange={(e) => { handleUpdate(i, e.target.checked) }} checked={todo.checked} />
             <span>{todo.value}</span>
             <button className={styles.button} onClick={() => { handleDelete(i) }}>X</button>
           </div>
