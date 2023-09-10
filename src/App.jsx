@@ -4,9 +4,13 @@ import Main from './Main'
 import Footer from './Footer'
 import React, { useState } from 'react';
 
+const localTodoItems = JSON.parse(window.localStorage.getItem('todo'));
+
 function App() {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(localTodoItems || [])
   const [types, setTypes] = useState('all')
+
+  window.localStorage.setItem('todo', JSON.stringify(todos));
 
   const handleClick = (todo) => {
     const arr = todos;
